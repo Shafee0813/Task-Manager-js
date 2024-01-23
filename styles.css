@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+:root{
+    --blue : rgb(70, 210, 232);
+    --lgreen :  rgb(73, 228, 86);
+    --mdgreen : rgb(15,155,80);
+    --dkrgreen : rgba(15, 155, 80, 0.6);
+    --drkstgreen : rgba(2, 67, 33, 0.6);
+}
+body{
+    background-color: rgb(7, 14, 7);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family:'poppins' ;
+    color:white;
+    
+}
+.title-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.title{
+    font-size: 3rem;
+    padding: 20px 40px;
+}
+.exp{    
+    padding: 20px;
+    font-size: 2.5rem;
+    text-align: end;
+    width: 400px;
+    color: rgb(134, 255, 186);
+}
+.main-body{
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    background: rgb(0,0,0);
+    background: linear-gradient(360deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 6%, rgba(15, 155, 85, 0.6) 71%);    
+    max-width: 700px;
+    min-height: 400px;
+    border-radius: 20px;
+    border: 1px solid white;
+    padding: 30px 40px;
+}
+.main-body>h1{
+    padding: 0px 0 20px 20px;
+    font-size: xx-large;
+    
+}
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mdgreen);
+    justify-content: space-between;
+    padding-left: 10px;
+    border-radius: 30px;
+    margin-bottom: 10px;
+}
+ul li{
+    list-style: none;
+    padding: 12px 8px 12px 20px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    background-image: url("./images/circle-unchecked.png") ;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    top:-1px;
+    left: -20px;
+}
+ul li.checked{
+    text-decoration: line-through;    
+    color: rgb(138, 135, 135);
+}
+ul li.checked::before{
+    background-image: url("./images/circle-checked.png") ;
+    height: 25px;
+    width: 25px;
+    top:10px;
+    left: -10px;
+}
+ul li span{
+    position: absolute;
+    right: 0;
+    top : 6px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    border-radius: 50%;    
+    border: 1px solid white;
+    transition: background-color 0.2s ease-in-out;
+}
+ul li span:hover{
+    background-color:rgb(1, 65, 4);
+}
+input{
+    flex: 1;
+    padding: 10px;
+    color: white;
+    border: none;
+    outline: none;    
+}
+input::placeholder{
+    color: white;
+}
+button{
+    border: none;
+    outline: none;    
+    padding: 10px 15px;
+    /* border-radius: 30px; */
+    border: 1px solid white;
+    background-color: black;
+    transition: all 0.8s;
+}
+button:hover{
+    border-radius: 30px;
+    background-color: white;
+    color: rgb(0, 0, 0);
+}
+span{
+    color: var(--lgreen);
+}
+
+@media (max-width: 825px){
+    .title{
+        font-size: 2.2rem;
+    }
+    .exp{
+        font-size: 1.8rem;
+    }
+    .main-body{
+        margin:  30px auto;
+
+    }
+}@media (max-width: 750px){
+    .title,.exp{
+        flex: 100%;
+        
+    }
+    .exp{
+        font-size: 1.4rem;
+        margin: 20px;
+        text-align: center;
+
+    }
+    .title-div .title{
+        text-align: center;
+    }
+    .main-body{
+        max-width: 500px;
+        padding: 30px 20px;
+        margin: 8px auto;
+    }   
+}
